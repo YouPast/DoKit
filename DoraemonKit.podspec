@@ -33,12 +33,12 @@ iOS各式各样的工具集合
   s.pod_target_xcconfig = {
     'DEFINES_MODULE' => 'YES'
   }
-  
+
   s.subspec 'CFoundation' do |ss|
     ss.source_files = 'iOS/DoKit/Classes/CFoundation/*.{h,c}'
     ss.compiler_flags = '-Wall', '-Wextra', '-Wpedantic', '-Werror', '-fvisibility=hidden'
   end
-  
+
   s.subspec 'Foundation' do |ss|
     ss.source_files = 'iOS/DoKit/Classes/Foundation/**/*.{h,m}'
     # language-extension-token warning be used to implement Objective-C typeof().
@@ -47,22 +47,6 @@ iOS各式各样的工具集合
     ss.dependency 'SocketRocket', '~> 0.6'
     ss.dependency 'Mantle', '~> 2.2'
   end
-  
-#  s.subspec 'CoreNG' do |ss|
-#    ss.dependency 'DoraemonKit/Foundation'
-#    ss.source_files = 'iOS/DoKit/Classes/Core/**/*.{h,m}'
-#    # language-extension-token warning be used to implement Objective-C typeof().
-#    # ?: grammar
-#    ss.compiler_flags = '-Wall', '-Wextra', '-Wpedantic', '-Werror', '-Wno-language-extension-token', '-Wno-gnu-conditional-omitted-operand'
-#    ss.resource_bundle = {
-#      'DoKitResource' => [
-#        'iOS/DoKit/Assets/Assets.xcassets',
-#        'iOS/DoKit/Assets/*.xib'
-#      ]
-#    }
-#    ss.dependency 'SocketRocket', '~> 0.6'
-#    ss.dependency 'Mantle', '~> 2.2'
-#  end
 
   s.subspec 'EventSynthesize' do |ss|
     ss.source_files = 'iOS/DoKit/Classes/EventSynthesize/*.{h,m}'
@@ -71,7 +55,7 @@ iOS各式各样的工具集合
     ss.dependency 'DoraemonKit/Foundation'
   end
 
-  s.subspec 'Core' do |ss| 
+  s.subspec 'Core' do |ss|
     ss.source_files = 'iOS/DoraemonKit/Src/Core/**/*.{h,m,c,mm}'
     ss.resource_bundle = {
       'DoraemonKit' => 'iOS/DoraemonKit/Resource/**/*'
@@ -82,7 +66,7 @@ iOS各式各样的工具集合
     ss.dependency 'FMDB'
   end
 
-  s.subspec 'WithLogger' do |ss| 
+  s.subspec 'WithLogger' do |ss|
     ss.source_files = 'iOS/DoraemonKit/Src/Logger/**/*{.h,.m}'
     ss.pod_target_xcconfig = {
       'GCC_PREPROCESSOR_DEFINITIONS' => '$(inherited) DoraemonWithLogger'
@@ -91,7 +75,7 @@ iOS各式各样的工具集合
     ss.dependency 'CocoaLumberjack'
   end
 
-  s.subspec 'WithGPS' do |ss| 
+  s.subspec 'WithGPS' do |ss|
     ss.source_files = 'iOS/DoraemonKit/Src/GPS/**/*{.h,.m}'
     ss.pod_target_xcconfig = {
       'GCC_PREPROCESSOR_DEFINITIONS' => '$(inherited) DoraemonWithGPS'
@@ -99,7 +83,7 @@ iOS各式各样的工具集合
     ss.dependency 'DoraemonKit/Core'
   end
 
-  s.subspec 'WithLoad' do |ss| 
+  s.subspec 'WithLoad' do |ss|
     ss.source_files = 'iOS/DoraemonKit/Src/MethodUseTime/**/*{.h,.m}'
     ss.pod_target_xcconfig = {
       'GCC_PREPROCESSOR_DEFINITIONS' => '$(inherited) DoraemonWithLoad'
@@ -110,7 +94,7 @@ iOS各式各样的工具集合
     ss.vendored_frameworks = 'iOS/DoraemonKit/Framework/*.framework'
   end
 
-  s.subspec 'WithWeex' do |ss| 
+  s.subspec 'WithWeex' do |ss|
     ss.source_files = 'iOS/DoraemonKit/Src/Weex/**/*{.h,.m}'
     ss.pod_target_xcconfig = {
       'GCC_PREPROCESSOR_DEFINITIONS' => '$(inherited) DoraemonWithWeex'
